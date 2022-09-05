@@ -10,22 +10,24 @@ An input string is valid if:
 #30daysofcoding
 """
 
+
 class Solution:
     def isValid(self, s: str) -> bool:
+        """
+        :type s: str
+        :type: bool
+        """
         if s is None:
             return True
         if len(s) % 2 != 0:
             return False
 
-        new_str = s.replace('{}', '').replace('()', '').replace('[]', '')
+        new_str = s.replace("{}", "").replace("()", "").replace("[]", "")
         if len(new_str) > 0:
             return False
         return True
 
 
-
-
-
-if  __name__=="__main__":
+if __name__ == "__main__":
     s = Solution()
-    print(s.isValid(s = "()[]}"))
+    print(s.isValid(s="()[]}"))
